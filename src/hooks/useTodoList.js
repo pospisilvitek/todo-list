@@ -135,7 +135,9 @@ export function useTodoList() {
     useEffect(() => {
         const refreshLayout = () => {
             requestAnimationFrame(() => {
-                window.dispatchEvent(new Event("resize"));
+                requestAnimationFrame(() => {
+                    window.dispatchEvent(new Event("resize"));
+                });
             });
         };
 
