@@ -147,6 +147,9 @@ export function useTodoList() {
             }
         };
 
+        refreshLayout();
+        document.fonts?.ready.then(refreshLayout);
+
         window.addEventListener("pageshow", refreshLayout);
         document.addEventListener("visibilitychange", handleVisibilityChange);
 
