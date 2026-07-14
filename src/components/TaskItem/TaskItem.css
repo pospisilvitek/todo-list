@@ -1,0 +1,57 @@
+.task-item {
+    display: flex;
+    align-items: flex-start;
+}
+
+.task-item__checkbox-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 var(--control-size);
+    height: var(--control-size);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition-background-color);
+}
+
+.task-item__textarea {
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: var(--control-size);
+    padding: 7.5px 0;
+    overflow-y: hidden;
+    resize: none;
+    color: inherit;
+    font: inherit;
+    background: transparent;
+    outline: none;
+    border: none;
+    transition: var(--transition-color);
+}
+
+.task-item__textarea:focus {
+    color: var(--color-theme);
+}
+
+.task-item__delete-button {
+    flex: 0 0 var(--control-size);
+    transition: var(--transition-color), var(--transition-background-color);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .task-item__delete-button:hover {
+        color: var(--color-theme);
+    }
+    .task-item__delete-button:active {
+        color: var(--color-text-main);
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .task-item__checkbox-wrapper:active {
+        background-color: var(--color-theme-press-background);
+    }
+    .task-item__delete-button:active {
+        background-color: var(--color-theme-press-background);
+    }
+}

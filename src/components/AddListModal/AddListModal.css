@@ -1,0 +1,70 @@
+.add-list-modal {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-overlay);
+    animation: fade-in var(--animation-enter);
+}
+
+.add-list-modal__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: calc(100% - var(--modal-horizontal-space));
+    padding: var(--control-size) var(--space-md) var(--space-md);
+    background-color: var(--color-modal-background);
+    border-radius: var(--border-radius);
+    animation: fade-in var(--animation-enter);
+}
+
+.add-list-modal__close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: var(--transition-color), var(--transition-background-color);
+}
+
+.add-list-modal__title, .add-list-modal__description {
+    margin-bottom: var(--space-sm);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .add-list-modal__close-button:hover {
+        color: var(--color-theme);
+    }
+    .add-list-modal__close-button:active {
+        color: var(--color-text-main);
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .add-list-modal {
+        padding-top: var(--navbar-height);
+        align-items: flex-start;
+        backdrop-filter: blur(2px);
+    }
+    .add-list-modal__close-button:active {
+        background-color: var(--color-theme-press-background);
+    }
+}
+
+@media (max-width: 360px) {
+    .add-list-modal__content {
+        padding: var(--control-size) 12px 12px;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    } 
+    to {
+        opacity: 1;
+    }
+}

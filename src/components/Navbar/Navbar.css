@@ -1,0 +1,106 @@
+.navbar {
+    display: flex;
+    height: var(--navbar-height);
+}
+
+.navbar__left-side {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0 0 var(--lists-panel-width);
+    padding-left: 12px;
+    padding-right: var(--space-md);
+    background-color: var(--color-lists-panel-header-background);
+}
+
+.navbar__brand {
+    width: auto;
+    gap: var(--space-xs);
+    color: var(--color-text-inverted);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+}
+
+.navbar__logo {
+    color: var(--color-theme);
+    font-size: var(--font-size-xl);
+    transition: var(--transition-color);
+}
+
+.navbar__hide-lists-button {
+    display: none;
+    color: var(--color-text-inverted);
+    transition: var(--transition-color), var(--transition-background-color);
+}
+
+.navbar__right-side {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 0 var(--space-md);
+    background-color: var(--color-app-background);
+}
+
+.navbar__show-lists-button {
+    display: none;
+    transition: var(--transition-color), var(--transition-background-color);
+}
+
+.navbar__add-list-button {
+    font-size: var(--font-size-lg);
+    transition: var(--transition-color), var(--transition-background-color);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .navbar__brand:hover .navbar__logo {
+        color: var(--color-theme-hover);
+    }
+    .navbar__brand:active .navbar__logo {
+        color: var(--color-theme-active);
+    }
+    .navbar__hide-lists-button:hover,
+    .navbar__show-lists-button:hover,
+    .navbar__add-list-button:hover {
+        color: var(--color-theme);
+    }
+    .navbar__hide-lists-button:active {
+        color: var(--color-text-inverted);
+    }
+    .navbar__show-lists-button:active,
+    .navbar__add-list-button:active {
+        color: var(--color-text-main);
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .navbar__brand:active .navbar__logo {
+        color: var(--color-theme-press-background-active);
+    }
+    .navbar__hide-lists-button:active, 
+    .navbar__show-lists-button:active, 
+    .navbar__add-list-button:active {
+        background-color: var(--color-theme-press-background);
+    }
+}
+
+@media (max-width: 650px) {
+    .navbar__left-side {
+        display: none;
+    }
+    .navbar__left-side.navbar__left-side--open {
+        display: flex;
+        flex: 1 1 100%;
+    }
+    .navbar__show-lists-button,
+    .navbar__hide-lists-button {
+        display: flex;
+    }
+    .navbar__right-side {
+        justify-content: space-between;
+    }
+    .navbar__right-side.navbar__right-side--hidden {
+        display: none;
+    }
+}

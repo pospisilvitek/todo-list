@@ -1,0 +1,75 @@
+.selected-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selected-list__input {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    transition: var(--transition-color);
+}
+
+.selected-list__input:focus {
+    color: var(--color-theme);
+}
+
+.selected-list__delete-actions {
+    display: flex;
+    margin-left: var(--space-sm);
+    background-color: var(--color-surface-muted);
+    border-radius: var(--border-radius);
+}
+
+.selected-list__delete-confirm-button, 
+.selected-list__delete-cancel-button, 
+.selected-list__delete-trigger {
+    flex: 0 0 var(--control-size);
+    background-color: var(--color-surface-muted);
+    transition: var(--transition-color), var(--transition-background-color);
+}
+
+.selected-list__delete-confirm-button {
+    color: var(--color-danger);
+}
+
+.selected-list__delete-cancel-button {
+    color: var(--color-technical-icon);
+}
+
+.selected-list__delete-trigger {
+    margin-left: var(--space-sm);
+    color: var(--color-technical-icon);
+}
+
+@media (hover: hover) and (pointer: fine) { 
+    .selected-list__delete-cancel-button:hover,
+    .selected-list__delete-trigger:hover {
+        color: var(--color-technical-icon-hover);
+    }
+    .selected-list__delete-cancel-button:active,
+    .selected-list__delete-trigger:active {
+        color: var(--color-technical-icon-active);
+    }
+    .selected-list__delete-confirm-button:hover {
+        color: var(--color-danger-hover);
+    }
+    .selected-list__delete-confirm-button:active {
+        color: var(--color-danger-active);
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .selected-list__delete-cancel-button:active,
+    .selected-list__delete-trigger:active {
+        background-color: var(--color-technical-press-background);
+    }
+    .selected-list__delete-confirm-button:active {
+        background-color: var(--color-danger-press-background);
+    }
+}
