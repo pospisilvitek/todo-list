@@ -103,6 +103,8 @@ export function useTodoList() {
     const [isAddListModalOpen, setIsAddListModalOpen] = useState(false);
     const [isListsPanelOpen, setIsListsPanelOpen] = useState(false);
 
+    const [textareasVersion, setTextareasVersion] = useState(0);
+
     const selectedList = lists.find((list) => list.id === selectedListId);
     const activeTasks = selectedList?.tasks?.filter((task) => !task.isCompleted) ?? [];
     const completedTasks = selectedList?.tasks?.filter((task) => task.isCompleted) ?? [];
@@ -136,7 +138,7 @@ export function useTodoList() {
         const refreshLayout = () => {
             requestAnimationFrame(() => {
                 requestAnimationFrame(() => {
-                    window.dispatchEvent(new Event("resize"));
+                    setTextareasVersion((currentTextareasVersion) => currentTextareasVersion + 1);
                 });
             });
         };
@@ -259,6 +261,8 @@ export function useTodoList() {
 
         isListsPanelOpen,
         setIsListsPanelOpen,
+
+        textareasVersion,
 
         selectedList,
         activeTasks,

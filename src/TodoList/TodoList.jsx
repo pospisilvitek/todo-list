@@ -25,6 +25,8 @@ export default function TodoList() {
         isListsPanelOpen,
         setIsListsPanelOpen,
 
+        textareasVersion,
+
         selectedList,
         activeTasks,
         completedTasks,
@@ -126,6 +128,7 @@ export default function TodoList() {
                                         <TaskItem
                                             key={task.id}
                                             task={task}
+                                            textareasVersion={textareasVersion}
                                             removeTask={removeTask}
                                             renameTask={renameTask}
                                             toggleTaskCompletion={toggleTaskCompletion}
@@ -154,6 +157,7 @@ export default function TodoList() {
                                         <TaskItem
                                             key={task.id}
                                             task={task}
+                                            textareasVersion={textareasVersion}
                                             removeTask={removeTask}
                                             renameTask={renameTask}
                                             toggleTaskCompletion={toggleTaskCompletion}

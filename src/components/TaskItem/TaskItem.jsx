@@ -10,6 +10,7 @@ import "./TaskItem.css";
 
 export default function TaskItem({ 
     task,
+    textareasVersion,
     removeTask,
     renameTask,
     toggleTaskCompletion
@@ -44,6 +45,7 @@ export default function TaskItem({
                 />
             </label>
             <TextAreaAutosize
+                key={`${task.id}-${textareasVersion}`}
                 className="task-item__textarea"
                 value={editedTaskName}
                 onChange={(event) => setEditedTaskName(event.target.value)}
