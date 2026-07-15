@@ -1,8 +1,8 @@
 # Todo List
 
-**A ready-to-use todo list app built with React for creating lists and organizing tasks.**
+A simple **todo list app** built with **React** for creating lists, organizing tasks and keeping everything saved locally in the browser.
 
-**See live preview:** [Todo List](https://pospisilvitek.github.io/todo-list/)
+➡️ See live preview: [Todo List](https://pospisilvitek.github.io/todo-list/)
 
 ## Preview
 
@@ -53,6 +53,6 @@ Additional libraries used in this project:
 
 ## Notes
 
-This is a personal portfolio project built to practice React, component structure, state management, localStorage, and responsive CSS.
+This is a personal portfolio project built to practice React, component structure, state management, localStorage and responsive CSS.
 
 No license is currently provided.
